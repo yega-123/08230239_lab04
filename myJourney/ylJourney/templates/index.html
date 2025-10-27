@@ -1,0 +1,88 @@
+{% load static %}
+<!-- Load Django's static template tag to access CSS, images, and other static files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Set character encoding for proper display of text -->
+
+    <title>My Learning Journey</title>
+    <!-- Page title displayed in the browser tab -->
+
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <!-- Link to external CSS file stored in the static folder -->
+</head>
+<body>
+    <header>
+        <h1>My Learning Journey</h1>
+        <!-- Main page header -->
+    </header>
+
+    <!-- Introduction text about the learning journey -->
+    <div class="intro-text">
+        <h2>Welcome to My Learning Journey</h2>
+        <!-- Section heading for the introduction -->
+
+        <p>
+            This semester I explored a variety of topics, from web development 
+            with HTML, CSS, and JavaScript to server-side development using the
+            MVT architecture. I learned how to create interactive webpages, 
+            manipulate the DOM, and understand backend processes like URL routing
+            that make websites function smoothly. These experiences have not only
+            strengthened my technical skills but also inspired me to continue 
+            exploring the exciting world of ICT.
+        </p>
+        <!-- Paragraph summarizing your ICT learning journey -->
+    </div>
+
+    <!-- Table to display weekly learning details -->
+    <table>
+        <tr>
+            <th>Week</th>
+            <th>Topic / Activity</th>
+            <th>What I Learned</th>
+            <th>Reflection</th>
+        </tr>
+        {% for j in journeys %}
+        <!-- Loop through 'journeys' context variable to display each week's data -->
+        <tr>
+            <td>{{ j.week }}</td>
+            <td>{{ j.topic }}</td>
+            <td>{{ j.what_i_learned }}</td>
+            <td>{{ j.reflection }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Section for displaying admin proof images -->
+    <p class="admin-proof">Following are my admin proof:</p>
+
+    <div class="admin-images">
+        <!-- Container for horizontally aligning proof images -->
+
+        <!-- About Me Admin Proof -->
+        <div class="proof">
+            <h3>About Me Admin Proof</h3>
+            <img src="{% static 'images/aboutMe.png' %}" alt="About Me Admin Proof" width="300">
+            <!-- Image showing About Me admin proof -->
+        </div>
+
+        <!-- Learning Journey Admin Proof -->
+        <div class="proof">
+            <h3>Learning Journey Admin Proof</h3>
+            <img src="{% static 'images/learning journey.png' %}" alt="Learning Journey Admin Proof" width="300">
+            <!-- Image showing Learning Journey admin proof -->
+        </div>
+    </div>
+
+    <!-- Link to About Me page -->
+    <a href="{% url 'about' %}">Go to About Me</a>
+
+    <!-- Footer section -->
+    <footer>
+        &copy; 2025 My Learning Journey. All rights reserved.
+        <!-- Footer content with copyright -->
+    </footer>
+</body>
+</html>

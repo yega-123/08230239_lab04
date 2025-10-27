@@ -1,0 +1,140 @@
+/* style.css */
+body {
+    font-family: Arial;
+    background-color: #f3f6fa;
+    padding: 20px;
+}
+
+header {
+    background: #FF69B4; /* pink header */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Section headings */
+h2 {
+    color: #FF69B4;
+    margin-bottom: 15px; /* space below heading */
+}
+
+/* Intro paragraph spacing */
+section p.intro {
+    margin-bottom: 20px; /* space between intro and table */
+}
+
+/* Table styling with About Me gradient */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ffd1dc, #ffe0e6); /* same as About Me */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* horizontal line */
+    border-right: 1px solid #ddd;  /* vertical line */
+    background: rgba(255, 255, 255, 0.6); /* slightly transparent for readability */
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+th {
+    background-color: #FF69B4; /* pink header for contrast */
+    color: white;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.8); /* lighter on hover */
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #FF69B4;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+p.admin-proof {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #FF69B4;
+    color: white;
+    border-radius: 10px;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Admin proof images horizontal */
+.admin-images {
+    display: flex;
+    gap: 120px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.admin-images .proof {
+    text-align: center;
+}
+
+/* About Me Section */
+section.aboutme {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffd1dc, #ffe0e6);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    flex-direction: row; /* image left, text right */
+}
+
+/* About Me image styling */
+section.aboutme img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #ff69b4;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+}
+
+section.aboutme img:hover {
+    transform: scale(1.05);
+}
+
+/* About Me text styling */
+section.aboutme .about-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    max-height: 500px;
+    overflow-y: auto;
+    text-align: left;
+}

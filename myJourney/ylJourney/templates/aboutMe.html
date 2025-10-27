@@ -1,0 +1,65 @@
+{% load static %}
+<!-- 
+    Load the 'static' template tag library to allow referencing static files 
+    such as CSS and images in the project.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Set the character encoding for proper text display -->
+
+    <title>About Me - {{ about.full_name }}</title>
+    <!-- Dynamically display the user's full name in the page title -->
+
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <!-- Link to the external CSS file located in the static directory -->
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <!-- Main page header -->
+    </header>
+
+    <section class="aboutme">
+        <!-- About Me section styled with flexbox and gradient background -->
+        
+        <img src="{% static 'images/yega.jpg' %}" alt="About Me Admin Proof" width="300">
+        <!-- Display user's profile image from the static folder
+             - alt attribute improves accessibility and SEO 
+             - width sets image size -->
+        
+        <div class="about-text">
+            <!-- Container for textual information about the user -->
+
+            <h2>{{ about.full_name }}</h2>
+            <!-- User's full name displayed as a secondary heading -->
+
+            <p><strong>Course:</strong> {{ about.course }}</p>
+            <!-- Display user's course information dynamically -->
+
+            <p><strong>College:</strong> {{ about.college }}</p>
+            <!-- Display user's college/university -->
+
+            <p><strong>Bio:</strong> {{ about.bio }}</p>
+            <!-- Display user's biography -->
+
+            <p><strong>Interests:</strong> {{ about.interests }}</p>
+            <!-- Display user's interests -->
+
+            <p><strong>Goals:</strong> {{ about.goals }}</p>
+            <!-- Display user's goals -->
+
+            <a href="{% url 'index' %}">Back to Learning Journey</a>
+            <!-- Navigation link back to the main Learning Journey page
+                 - 'url' tag dynamically generates URL for the view named 'index' -->
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 My Learning Journey. All rights reserved.
+        <!-- Footer information with copyright -->
+    </footer>
+</body>
+</html>
